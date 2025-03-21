@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e24721dff8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo 3.jpeg" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#portfolio">Projects And Certificate</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>BCA Student</p>
+                <h1>Hi , I am <span>Mahi Goyal</span></h1>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/pp.jpeg">
+                </div>
+                <div class="about-col-2">
+                    <h1 clss="sub-title">About Me</h1>
+                    <p>
+                        Mahi Goyal is a highly motivated 2nd-year BCA student with a CGPA of 8.73. Eager to 
+                        apply classroom knowledge in a practical setting, She is actively seeking an internship 
+                        to contribute and learn within a dynamic organization. Possessing strong analytical and 
+                        problem-solving skills, She is ready to embrace new challenges and contribute to team 
+                        success. A quick learner with a dedicated work ethic, She is confident in making a valuable 
+                        contribution.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('hobbies')">Hobbies</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="education">
+                        <ul>
+                            <li><span>Maheshwari Girls Public School</span><br>Class 12th - 73.8<br> 2022-2023</li>
+                            <li><span>JRCEC University</span><br>Bachelor of computer application - 8.73<br> 2023-2026</li>
+                        </ul>
+
+                    </div>
+                    <div class="tab-contents" id="hobbies">
+                        <ul>
+                            <li><span>Painting</span></li>
+                            <li><span>Writing</span></li>
+                            <li><span>Reading</span></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="skills">
+        <div class="container">
+            <h1 class="sub-title">My Skills</h1>
+            <div class="skill-list">
+                    <ul>
+                        <li>C programming language</li>
+                        <li>C++ using Oops</li>
+                        <li>My SQL</li>
+                        <li>Java programming language</li>
+                        <li>Python programming language</li>
+                        <li>Problem solving</li>
+                        <li>Presentation Skills</li>
+                    </ul>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Certificates</h1>
+            <div class="certificate-list">
+                <p>Python Programming - My Caption</p>
+                <a href="images/certificate1.pdf" download class="btn btn1">Download Certificate</a>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>mahigoyal4862@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>8000684044</p>
+                    <div class="social-icons">
+                        <a herf="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a herf="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                    <a href="images/Mahi Goyal - Resume.pdf" download class="btn btn2">Download Resume</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn3">Submit</button>
+
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright @ Kevin Made with the help of easy tutorials</p>
+        </div>
+    </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+
+        }
+    </script>
+    <script>
+        var sidemeu= document.getElementById("sidemenu");
+        function openmenu(){
+            sidemeu.style.right="0";
+        }
+        function closemenu(){
+            sidemeu.style.right="-200px";
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyvCjWnl0EQ-J8zHGTl60ag3RBgsEGeZoJQoov_-9CVDd1TzbZX_AZ8AzNNU06QuTFVmQ/exec'
+        const form = document.forms['submit-to-google-sheet']
+        constmsg=document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message Sent Sucessfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
